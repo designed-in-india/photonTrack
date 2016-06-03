@@ -1,0 +1,391 @@
+      body { font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif; font-size: 100%; height:160px; max-height: 560px; width: 300px; margin: 0; transition-property: height; transition-duration: 1s}
+      header{ margin: 1%; height: 20px; top: 0; left: 0; width: 98%; }
+      footer{ bottom: 0; margin: 1%; height: 20px; width: 98%;}
+      table { border-collapse: collapse;}
+      table, th, td { border: 1px solid black; text-align: center; }
+      th { font-size: 90%; background-color: #F57D1F; color: white; font: message-box; }
+      @font-face{
+        font-family: roboto;
+        src: url('./roboto.regular.ttf');
+      }
+      .main-container{
+        height: 100%;
+        margin: 1%;
+      }
+      #walkThrough{
+        background-image: url('../images/prod_start_logo.png');
+        background-position: -3px 5px;
+        background-repeat: no-repeat;
+        background-size: 48%;
+        font: message-box;
+        font-size: medium;
+        font-weight: 400;
+        height: 140px;
+      }
+      .welcome-text1{
+        position: relative;
+        font-size: xx-large;
+        top: 13px;
+        padding-right: 30px;
+      }
+      .welcome-text2{
+        position: relative;
+        font-size: xx-large;
+        top: -2px;
+        padding-right: 1.5px;
+      }
+      #overlay {z-index: 10; height: 100%; width: 100%; position: absolute; background-color: white; opacity: 0.9;}
+      #overlay img{ margin-left: 25%; margin-top: 8%;}
+      #headerText{
+        font: message-box;
+        font-size: medium;
+        font-weight: 400;
+      }
+      .visible { 
+        display: block; 
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+      .full-width{
+        width: 100%;
+      }
+      .pointer { cursor: pointer;}
+      .default-cursor { cursor: default; }
+      #statusBlock {
+        position: relative;
+        top:5px;
+      }
+      #weeklyMonthlyBlock{
+        position: relative;
+        margin-top: 20px;
+      }
+      #firstLaunch{
+        padding-top: 10px;
+      }
+      #settingsBlock{
+        position: absolute;
+        top: 65px;
+        height: 70px;
+        width: 100%;
+      }
+      .settings-text-block{
+        font-family: roboto;
+        font-size: 12px;
+      }
+      .my-ul{
+        margin: 5px 0 0 0;
+        padding-left: 20px;
+      }
+      .button-block{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+      }
+      #clearPhotonButton{
+        width: 30%;
+        float: left;
+      }
+      #clearAllButton{
+        width: 30%;
+        float: right;
+      }
+      .clear-cal-parent{
+        width: 40%;
+        display: inline-block;
+      }
+      #clearCalButton{
+        width: 95px;
+        margin:0 auto;
+        display: block;
+      }
+      #startButton {
+        float: right;
+        margin-right: 20%;
+        margin-top: 5px;
+      }
+      #eCodeBox{
+        position: relative;
+        top:10px;
+        height: 20px;
+        width: 85px;
+        margin: 0 auto;
+        display: block;
+        outline: transparent;
+      }
+      .message{
+        font-family: roboto;
+        padding-top: 15px;
+      }
+      .container{
+        position: relative;
+        width: 100%;
+      }
+      
+      .ecode-box{
+        height: 20px;
+        width: 75px;
+        margin: 0 auto;
+        display: block;
+      }
+      
+      .page{
+        left: 0;
+        height: 110px;
+        width: 100%;
+        position: relative;
+      }
+
+      .sub-page{
+        margin-top:15px;
+        height: 275px;
+      }
+      /*Common classes*/
+      .right{
+        text-align: right;
+      }
+      .hidden{
+        display: none !important;
+      }
+      .left-bottom{
+        bottom: 0;
+        font-size: x-small;
+        z-index: 9;
+      }
+
+      /*logos*/
+      .mail-logo{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: url(mail.svg);
+        background-size: 15px 15px;
+      }
+      .default-logo{
+        display: inline-block;
+        float: right;
+        width: 20px;
+        height: 20px;
+        background: url(wrench.svg);
+        background-size: 20px 20px;
+        margin-top: 0px;
+      }
+      .home-logo{
+        background: url(home.svg);
+        background-size: 20px 20px;
+      }
+      .info-logo{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: url(info.svg);
+        background-size: 15px 15px;
+        margin-top: 3px;
+      }
+
+      /*test*/
+      /* Sweep To Right */
+      .hvr-sweep-to-right {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        position: relative;
+        transition-property: color;
+        transition-duration: 0.3s;
+        cursor: pointer;
+      }
+      .hvr-sweep-to-right:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #F57D1F;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus {
+        color: white;
+        outline: 0;
+      }
+      .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+
+      [class^="hvr-"] {
+          /* display: inline-block; */
+          /* vertical-align: middle; */
+          width: 60px;
+          height: 30px;
+          cursor: pointer;
+          background: white;
+          text-decoration: none;
+          color: #666;
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+          border-radius: 7px;
+          border: 2px solid #F57D1F;
+      }
+
+      /* Buzz */
+      @keyframes iconhvr-buzz {
+        10% {
+          transform: translateX(3px) rotate(2deg);
+        }
+
+        20% {
+          transform: translateX(-3px) rotate(-2deg);
+        }
+
+        30% {
+          transform: translateX(3px) rotate(2deg);
+        }
+
+        40% {
+          transform: translateX(-3px) rotate(-2deg);
+        }
+
+        50% {
+          transform: translateX(2px) rotate(1deg);
+        }
+
+        60% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+
+        70% {
+          transform: translateX(2px) rotate(1deg);
+        }
+
+        80% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+
+        90% {
+          transform: translateX(1px) rotate(0);
+        }
+
+        100% {
+          transform: translateX(-1px) rotate(0);
+        }
+      }
+
+      .iconhvr-buzz {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        cursor: pointer;
+      }
+      .iconhvr-buzz:hover, .iconhvr-buzz:focus {
+        animation-name: iconhvr-buzz;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+      }
+
+      /* Pop */
+      @-webkit-keyframes hvr-pop {
+        50% {
+          transform: scale(1.03);
+        }
+      }
+
+      @keyframes hvr-pop {
+        50% {
+          transform: scale(1.03);
+        }
+      }
+
+      @-webkit-keyframes hvr-pop-big {
+        50% {
+          transform: scale(1.3);
+        }
+      }
+
+      @keyframes hvr-pop-big {
+        50% {
+          transform: scale(1.3);
+        }
+      }
+
+      .hvr-pop {
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        cursor: pointer;
+      }
+      .hvr-pop:hover, .hvr-pop:focus {
+        animation-name: hvr-pop;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+      }
+      .hvr-pop.pop-big:hover, .hvr-pop.pop-big:focus{
+        animation-name: hvr-pop-big;
+      }
+
+      #iFrame{
+        height: 200px;
+        width: 100%;
+        margin-top:20px;
+      }
+
+      .card{
+        margin: 5px 5px 15px 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        border-radius: 2px;
+        background-color: #fff;
+      }
+
+      .card .item{
+        background-color: #DEDEDE;
+        border-color: #ddd;
+        padding: 2px 5px 2px 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-width: 1px;
+        border-style: solid;
+        box-sizing: border-box;
+      }
+
+      .item.when {
+        background-color: #F57D1F; 
+        height:25px;
+        font-size: 15px;
+      }
+
+      .item.what {
+        background-color: white; 
+        height:50px;
+        font-size: 15px;
+      }
+
+      .float-right{
+        float: right;
+        color:#F57D1F;
+      }
+
+      .cal-header{
+        margin-left: 5px;
+      }
+      .white{
+        color:white;
+      }
+      .right-bottom{
+        float: right;
+      }
+      .right-bottom label{
+        font-size: 10px;
+      }

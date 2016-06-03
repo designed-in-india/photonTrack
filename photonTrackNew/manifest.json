@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "Photon Track Plus",
+  "short_name": "photonTrack",
+  //removeIf(production) 
+  "name": "Local Photon Track",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvYQYp7SsbyG8UmR2oHdMnhg7dzcNOKbjYUH0cT3k5gSv+R9p5RIZYpgPuUIZ4QC5vLwU/Jcel+BTnpWJnPi6V9BA7vf98LNbee92mnx2s3WyROX1gcGAGWojsIMj9b+PHMUyxuIxKChjCohRRY7JY3Lbf6qlDaXTfBx7pyurNU8IT1bgkJ4G7nktImrgjRl3RCdk/n/X9HoJKs0j0yrP3RATctHiCv4nKF2938kAdYBn3BueKGYS3xDnl4OiFi4gSEZ0CT/nM42kQbhI3JUezoINsnfir0OWF+FK10nW4fMWAKuiSdfZ000+xKNThjf6LIQZe84ZGw7xc8Jih5FnIQIDAQAB",
+  //endRemoveIf(production)
+  "description": "Get total work area hours and your Google calender info in a click",
+  "version": "0.1.9",
+  "author":"Vikram Menon M",
+  "browser_action": {
+    "default_icon": "app/images/prod_icon_launcher.png",
+    "default_popup": "app/popup.html",
+    "default_title": "Photon Track Plus"
+    //removeIf(production) 
+    ,
+    "default_icon": "app/images/local_icon_launcher.png",
+    "default_title": "Local Photon Track"
+    //endRemoveIf(production)
+  },
+  "content_security_policy": "script-src 'self' https://apis.google.com https://*.google-analytics.com; object-src 'self'",
+  "permissions": [
+    "identity",
+    "tabs",
+    "https://*.google-analytics.com/",
+    "https://*.googleapis.com/",
+    "https://*.photoninfotech.com/",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.photoninfotech.com/*"],
+      "js": ["app/js/injector.js"]
+    }
+  ],
+  "icons": { 
+    "16": "app/images/prod_icon16.png",
+    "48": "app/images/prod_icon48.png",
+    "128": "app/images/prod_icon128.png" 
+  }
+  //removeIf(production) 
+  ,"background": {
+    "scripts": ["app/js/background.js"]
+  },
+  "icons": { 
+    "16": "app/images/local16.png",
+    "48": "app/images/local48.png",
+    "128": "app/images/local128.png" 
+  }
+  //endRemoveIf(production)
+}

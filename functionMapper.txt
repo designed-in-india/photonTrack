@@ -1,0 +1,6 @@
+reviewAppClickHandler : rach
+clearButtonClickHandler : cbch
+settingsClickHandler : sech
+mailToClickHandler : mtch
+startClickHandler : stch
+findIfDifferentUserIsLoggedInPulse : fdu

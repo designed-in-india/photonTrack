@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Photon track - Find login hours</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="themes/style.css">
+    <script async src="https://apis.google.com/js/client.js?onload=gCalInit"></script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!--build:js js/main.min.js -->
+    <script src="js/config.js"></script>
+    <script src="js/bootUp.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/clickHandlers.js"></script>
+    <script src="js/calender.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="overlay" class="hidden"><img src="themes/loading.svg" alt="Be patient..." /></div>
+      <iframe id="iFrame" class="hidden"></iframe>
+      <div id="walkThrough" class="container" autofocus>
+        <div class="right default-cursor" style="margin-right: 15%;">Photon Track Plus</div>
+        <div class="right welcome-text1 default-cursor">Welcome</div>
+        <div class="right welcome-text2 default-cursor">photonite</div>
+        <!-- my stupid hack to avoid the extension focussing on the first available button -->
+        <button style="display: inline;padding: 0;border: 0"></button>
+        <!-- end of my hack -->
+        <button id="startButton" class="hvr-sweep-to-right">Start</button>
+      </div>
+
+      <header id="header" class="hidden">
+          <span id="headerText" class="default-cursor"></span>
+          <a id="topCornerIcon" class="default-logo hvr-pop pop-big"></a>
+      </header>
+
+      <div id="homePage" class="page hidden">
+        <div id="statusBlock">
+          <div class="container">
+            <table class="full-width">
+              <tr>
+                <th class="default-cursor">In time</th>
+                <th class="default-cursor">Total time</th>
+                <th class="default-cursor">Leave by</th>
+              </tr>
+              <tr>
+                <td id="inTime" class="default-cursor"></td>
+                <td id="totalTime" class="default-cursor"></td>
+                <td id="expectedExit" class="default-cursor"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="weeklyMonthlyBlock" class="hidden">
+          <div class="container">
+            <table class="full-width">
+              <tr>
+                <th class="default-cursor">Weekly</th>
+                <th class="default-cursor">Monthly</th>
+               </tr>
+               <tr>
+                <td id="weekly" class="default-cursor"></td>
+                <td id="monthly" class="default-cursor"></td>
+               </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="settingsPage" class="page hidden">
+        <div class="settings-text-block">
+          <div>More options to come in future updates:</div>
+          <div>
+            <ul class="my-ul">
+              <li>Toggle to show hide sections</li>
+              <li>Toggle for notification</li>
+              <li>Toggle enhance weekly/monthly info</li>
+            </ul>
+          </div>
+        </div>
+        <div class="button-block">
+          <button id="clearPhotonButton" class="hvr-sweep-to-right">Reset Pulse</button>
+          <div class="clear-cal-parent">
+            <button id="clearCalButton" class="hvr-sweep-to-right">Reset Calendar</button>
+          </div>
+          <button id="clearAllButton" class="hvr-sweep-to-right">Reset App</button>
+        </div>
+      </div>
+
+      <div id="infoPage" class="page hidden">
+        <div id="content" class="message default-cursor"></div>
+      </div>
+
+      <div id="googleCal" class="page sub-page hidden">
+        <div class="cal-header default-cursor">Your upcoming meetings : </div>
+        <div id="card1" class="card hvr-pop">
+          <div class="item when">
+            <span id="timeCard1" class="left white"></span>
+            <span id="timeLeftCard1" class="right float-right white"></span>
+          </div>
+          <div id="summaryCard1" class="item what"></div>
+        </div>
+
+        <div id="card2" class="card hvr-pop">
+          <div class="item when">
+            <span id="timeCard2" class="left white"></span>
+            <span id="timeLeftCard2" class="right float-right white"></span>
+          </div>
+          <div id="summaryCard2" class="item what"></div>
+        </div>
+
+        <div id="card3" class="card hvr-pop">
+          <div class="item when">
+            <span id="timeCard3" class="left white"></span>
+            <span id="timeLeftCard3" class="right float-right white"></span>
+          </div>
+          <div id="summaryCard3" class="item what"></div>
+        </div>
+      </div>
+
+      <footer>
+        <span class="left-bottom default-cursor">
+          By Vikram Menon
+          <a id="mailToIcon" class="mail-logo iconhvr-buzz"></a>
+        </span>
+        <span class="right-bottom">
+          <label id="version-label"></label>
+          <a id="infoIcon" class="info-logo iconhvr-buzz"></a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>
+

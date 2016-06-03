@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Photon Track Plus",
+  "short_name": "photonTrack",
+  "description": "Get total work area hours and your Google calender info in a click",
+  "version": "0.1.9",
+  "author":"Vikram Menon M",
+  "browser_action": {
+    "default_icon": "app/images/prod_icon_launcher.png",
+    "default_popup": "app/popup.html",
+    "default_title": "Photon Track Plus"
+    },
+  "content_security_policy": "script-src 'self' https://apis.google.com https://*.google-analytics.com; object-src 'self'",
+  "permissions": [
+    "identity",
+    "tabs",
+    "https://*.google-analytics.com/",
+    "https://*.googleapis.com/",
+    "https://*.photoninfotech.com/",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.photoninfotech.com/*"],
+      "js": ["app/js/injector.js"]
+    }
+  ],
+  "icons": { 
+    "16": "app/images/prod_icon16.png",
+    "48": "app/images/prod_icon48.png",
+    "128": "app/images/prod_icon128.png" 
+  }
+  }
